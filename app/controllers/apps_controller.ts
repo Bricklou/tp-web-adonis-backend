@@ -8,6 +8,9 @@ export default class AppsController {
 
   public async index(ctx: HttpContext) {
     const count = await User.count()
-    return `It works, there is ${count} users in the database!`
+
+    return {
+      message: `It works, there is ${count} users in the database!`,
+    }
   }
 }
