@@ -8,5 +8,6 @@
 */
 
 import router from '@adonisjs/core/services/router'
+const AppController = () => import('#controllers/apps_controller')
 
-router.get('/', async () => 'It works!')
+router.get('/', [AppController, 'index'])
