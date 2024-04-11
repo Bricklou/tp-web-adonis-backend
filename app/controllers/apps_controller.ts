@@ -1,12 +1,11 @@
 import User from '#models/user'
 import { inject } from '@adonisjs/core'
-import { HttpContext } from '@adonisjs/core/http'
 
 @inject()
 export default class AppsController {
-  public constructor() {}
+  constructor() {}
 
-  public async index(ctx: HttpContext) {
+  async index() {
     const count = await User.count()
 
     return {
